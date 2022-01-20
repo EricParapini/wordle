@@ -8,9 +8,13 @@ Currently only works in verbose mode - no other output implemented at the moment
 
 ## Arguments
 -p / --pattern      regex pattern to match
+
 -r / --require      letters that must appear anywhere in the word - input individually as 'a' 'b' 'c' etc.
+
 -s / --source_file  path to dictionary file to look up against
+
 -d / --dest_file    - CURRENTLY UNUSED - path to destination file to output identified wordles
+
 -v / --verbose      Print matching results to terminal, ends with identified wordles
 
 ## Usage Example
