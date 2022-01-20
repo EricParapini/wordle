@@ -15,17 +15,41 @@ def define_argument_parser():
     return parser
 
 def find_wordles(regex_pattern,required_letters,source_file,is_verbose):
+    wordles = []
+
     with open(source_file, 'r') as f:
-        for row in f:
-            print(row)
+        for word in f:
+            word = word.strip()
+            include_word = True
+            
+            if(re.match(regex_pattern,word)):
+                if(is_verbose):
+                    print(f"Matched word: {word} with pattern: {regex_pattern}")
+                
+                # Word has matched, now make sure includes required letters
+                if required_letters is not None:
+                    for letter in required_letters:
+                        if(letter not in word):
+                            if(is_verbose):
+                                print(f"Word {word} does not contain letter {letter}")
+                            include_word = False
+                
+                if (include_word):
+                    wordles.append(word)
+
+    return wordles
 
 def print_wordles(wordle_list,destination_file,is_verbose):
-    pass
+    if(is_verbose):
+        print(f"Found Wordles:")
+        for wordle in wordle_list:
+            print(wordle)
 
 def main():
     # Get the args
     args = define_argument_parser().parse_args()
     wordles = find_wordles(args.pattern,args.require,args.source_file,args.verbose)
+    print_wordles(wordles,args.dest_file,args.verbose)
 
 if __name__ == "__main__":
     main()
