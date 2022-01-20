@@ -20,7 +20,7 @@ Currently only works in verbose mode - no other output implemented at the moment
 ## Usage Example
 ./wordle.py -v -s ./words.txt -p '[^c][^bde][^cde][f][^de]' -r a l o 
 
-This would the program to match with words that has:
+This would tell the program to match with words against a pattern with the following rules:
 - First letter is not an 'c'
 - Second letter is not 'b' 'd' or 'e'
 - Third letter is not 'c' 'd' or 'e'
