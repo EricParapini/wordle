@@ -18,7 +18,7 @@ Currently only works in verbose mode - no other output implemented at the moment
 -v / --verbose      Print matching results to terminal, ends with identified wordles
 
 ## Usage Example
-./wordle.py -s ./words.txt -p '[^c][^bde][^cde][f][^de]' -r a l o -v
+./wordle.py -v -s ./words.txt -p '[^c][^bde][^cde][f][^de]' -r a l o 
 
 This would the program to match with words that has:
 - First letter is not an 'c'
