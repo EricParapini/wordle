@@ -9,7 +9,7 @@ def define_argument_parser():
     parser.add_argument('-r','--require',nargs='*', required=False) # if empty = args.require is None
 
     parser.add_argument('-s','--source_file',nargs='?',required=True)
-    parser.add_argument('-d','--dest_file',nargs='?',required=True)
+    parser.add_argument('-d','--dest_file',nargs='?',required=False)
 
     parser.add_argument('-v','--verbose',action='store_true')
     return parser
